@@ -1,3 +1,0 @@
-C:/Users/ZGCC/Desktop/naive/build/CMakeFiles/naive.dir
-C:/Users/ZGCC/Desktop/naive/build/CMakeFiles/edit_cache.dir
-C:/Users/ZGCC/Desktop/naive/build/CMakeFiles/rebuild_cache.dir
