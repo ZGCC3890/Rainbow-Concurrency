@@ -1,0 +1,3 @@
+"D:\Jetbrain\CLion 2024.1.1\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\naive.dir/objects.a
+"D:\Jetbrain\CLion 2024.1.1\bin\mingw\bin\ar.exe" qc CMakeFiles\naive.dir/objects.a @CMakeFiles\naive.dir\objects1.rsp
+"D:\Jetbrain\CLion 2024.1.1\bin\mingw\bin\g++.exe"  -O2 -g -Wl,--whole-archive CMakeFiles\naive.dir/objects.a -Wl,--no-whole-archive -o naive.exe -Wl,--out-implib,libnaive.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\naive.dir\linkLibs.rsp
