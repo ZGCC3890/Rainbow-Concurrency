@@ -1,3 +1,0 @@
-F:/JetBrains/Rainbow-Concurrency/cmake-build-debug/CMakeFiles/Rainbow.dir
-F:/JetBrains/Rainbow-Concurrency/cmake-build-debug/CMakeFiles/edit_cache.dir
-F:/JetBrains/Rainbow-Concurrency/cmake-build-debug/CMakeFiles/rebuild_cache.dir
