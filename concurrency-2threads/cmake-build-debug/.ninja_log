@@ -1,0 +1,4 @@
+# ninja log v5
+82	752	7567603869493241	CMakeFiles/Rainbow-concurrency-2threads.dir/src/utils.cpp.obj	6d613b50c6fb7426
+2	975	7567603871726417	CMakeFiles/Rainbow-concurrency-2threads.dir/src/main.cpp.obj	131ca4a8785868b4
+975	1321	7567603875146901	Rainbow-concurrency-2threads.exe	8addc91df7df9b59

@@ -20,7 +20,67 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="68beca76-34ee-40ac-a113-92d0802b6048" name="更改" comment="导入naive" />
+    <list default="true" id="68beca76-34ee-40ac-a113-92d0802b6048" name="更改" comment="导入naive">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concurrency-2threads/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/concurrency-2threads/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concurrency-3threads/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-d84ed998444f2edf1c7c.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/concurrency-3threads/cmake-build-debug/.cmake/api/v1/reply/index-2024-12-24T15-46-20-0269.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/concurrency-3threads/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/concurrency-3threads/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concurrency-3threads/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/concurrency-3threads/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concurrency-3threads/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/concurrency-3threads/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concurrency-3threads/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/concurrency-3threads/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concurrency-3threads/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/concurrency-3threads/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive-3threads/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/naive-3threads/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive-3threads/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/naive-3threads/src/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/.cmake/api/v1/reply/cache-v2-3bbb001919942225f2c1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-f321923c6203941249ce.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/.cmake/api/v1/reply/index-2024-12-24T15-49-39-0550.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/3.28.1/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/3.28.1/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/3.28.1/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/3.28.1/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/3.28.1/CompilerIdC/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/3.28.1/CompilerIdC/a.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/3.28.1/CompilerIdCXX/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/3.28.1/CompilerIdCXX/a.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/Rainbow-naive.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/Rainbow-naive.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/Rainbow-naive.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/Rainbow-naive.dir/compiler_depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/Rainbow-naive.dir/compiler_depend.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/Rainbow-naive.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/Rainbow-naive.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/Rainbow-naive.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/Rainbow-naive.dir/linkLibs.rsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/Rainbow-naive.dir/objects.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/Rainbow-naive.dir/objects1.rsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/Rainbow-naive.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/Rainbow-naive.dir/src/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/Rainbow-naive.dir/src/main.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/Rainbow-naive.dir/src/main.cpp.obj.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/Rainbow-naive.dir/src/utils.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/Rainbow-naive.dir/src/utils.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/Rainbow-naive.dir/src/utils.cpp.obj.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/Rainbow.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/Rainbow.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/Rainbow.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/Rainbow.dir/compiler_depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/Rainbow.dir/compiler_depend.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/Rainbow.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/Rainbow.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/Rainbow.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/Rainbow.dir/linkLibs.rsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/Rainbow.dir/objects1.rsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/Rainbow.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/Rainbow-naive.exe" beforeDir="false" afterPath="$PROJECT_DIR$/naive/cmake-build-debug/Rainbow-naive.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/naive/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/naive/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/compile.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/naive/src/main.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,6 +92,12 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2024" />
+    <option name="minorVersion" value="1.1" />
+    <option name="productBranch" value="Classic" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -50,7 +116,11 @@
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "CMake Application.Rainbow.executor": "Run",
     "CMake Application.naive.executor": "Run",
+    "CMake 应用程序.Rainbow-concurrency-2threads.executor": "Run",
+    "CMake 应用程序.Rainbow-concurrency-3threads.executor": "Run",
+    "CMake 应用程序.Rainbow-naive-3threads.executor": "Run",
     "CMake 应用程序.Rainbow-naive.executor": "Run",
+    "CMake 调试.Project.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
@@ -59,7 +129,7 @@
     "cidr.known.project.marker": "true",
     "deletionFromPopupRequiresConfirmation": "false",
     "git-widget-placeholder": "feature",
-    "last_opened_file_path": "F:/JetBrains/Rainbow-Concurrency/concurrency-3threads",
+    "last_opened_file_path": "F:/JetBrains/Rainbow-Concurrency",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -68,17 +138,38 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="CMake 应用程序.Rainbow-concurrency-2threads">
     <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Rainbow-naive" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../input ./pattern_rule.txt ./pattern_accept.txt" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Rainbow-naive" TARGET_NAME="Rainbow-naive" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Rainbow-naive" RUN_TARGET_NAME="Rainbow-naive">
+    <configuration name="Rainbow-concurrency-2threads" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../input ../pattern/pattern_rule.txt ../pattern/pattern_accept.txt" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Rainbow-naive" TARGET_NAME="Rainbow-concurrency-2threads" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Rainbow-naive" RUN_TARGET_NAME="Rainbow-concurrency-2threads">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Rainbow-concurrency-3threads" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../input ../pattern/pattern_rule.txt ../pattern/pattern_accept.txt" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Rainbow-naive" TARGET_NAME="Rainbow-concurrency-3threads" RUN_TARGET_PROJECT_NAME="Rainbow-naive" RUN_TARGET_NAME="Rainbow-concurrency-3threads">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Rainbow-naive-3threads" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../input ../pattern/pattern_rule.txt ../pattern/pattern_accept.txt" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Rainbow-naive" TARGET_NAME="Rainbow-naive-3threads" RUN_TARGET_PROJECT_NAME="Rainbow-naive" RUN_TARGET_NAME="Rainbow-naive-3threads">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Rainbow-naive" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../input ../pattern/pattern_rule.txt ../pattern/pattern_accept.txt" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Rainbow-naive" TARGET_NAME="Rainbow-naive" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Rainbow-naive" RUN_TARGET_NAME="Rainbow-naive">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake 应用程序.Rainbow-concurrency-3threads" />
+      <item itemvalue="CMake 应用程序.Rainbow-naive" />
+      <item itemvalue="CMake 应用程序.Rainbow-naive-3threads" />
+      <item itemvalue="CMake 应用程序.Rainbow-concurrency-2threads" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -96,6 +187,8 @@
       <workItem from="1734690805623" duration="1709000" />
       <workItem from="1735038352928" duration="596000" />
       <workItem from="1735046838200" duration="2319000" />
+      <workItem from="1735055700125" duration="329000" />
+      <workItem from="1735056051605" duration="1144000" />
     </task>
     <task id="LOCAL-00001" summary="导入naive">
       <option name="closed" value="true" />

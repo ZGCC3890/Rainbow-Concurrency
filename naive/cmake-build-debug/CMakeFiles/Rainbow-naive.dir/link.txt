@@ -1,3 +1,0 @@
-"D:\Jetbrain\CLion 2024.1.1\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\Rainbow-naive.dir/objects.a
-"D:\Jetbrain\CLion 2024.1.1\bin\mingw\bin\ar.exe" qc CMakeFiles\Rainbow-naive.dir/objects.a @CMakeFiles\Rainbow-naive.dir\objects1.rsp
-"D:\Jetbrain\CLion 2024.1.1\bin\mingw\bin\g++.exe"  -O2 -g -Wl,--whole-archive CMakeFiles\Rainbow-naive.dir/objects.a -Wl,--no-whole-archive -o Rainbow-naive.exe -Wl,--out-implib,libRainbow-naive.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Rainbow-naive.dir\linkLibs.rsp

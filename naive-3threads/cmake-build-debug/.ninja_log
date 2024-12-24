@@ -1,0 +1,4 @@
+# ninja log v5
+82	763	7567603162284157	CMakeFiles/Rainbow-naive-3threads.dir/src/utils.cpp.obj	b54e1b3045c8f7de
+1	970	7567603164358870	CMakeFiles/Rainbow-naive-3threads.dir/src/main.cpp.obj	7184e6ec965ad4ab
+970	1337	7567603167987570	Rainbow-naive-3threads.exe	c06c0573171eaf6

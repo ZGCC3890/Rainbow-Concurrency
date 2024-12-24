@@ -103,7 +103,7 @@ int main(int argc, char **argv)
         for (int j = 0; j < len; j++)
         {
             state = fsm->list[state * 256 + token[j]];
-//            if(fsm->accept[state]) g_match++;
+            if(fsm->accept[state]) g_match++;
             g_scan++;
         }
     }
