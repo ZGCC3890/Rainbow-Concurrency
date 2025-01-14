@@ -10,26 +10,25 @@ unsigned int g_match = 0;
 int literal_num = 0;
 clock_t spend = 0;
 
-unsigned long long total = 73385030;
-unsigned long long compress = 165299749;
-
 FSM *readFromFile(char *tableFile, char *acceptFile)
 {
+    // 将目标状态表acceptFile读入acceptVec
     vector<int> acceptVec;
-    ifstream in_ac;
-    in_ac.open(acceptFile);
-    if (in_ac.is_open())
+    ifstream in_accept;
+    in_accept.open(acceptFile);
+    if (in_accept.is_open())
     {
-        while (in_ac)
+        while (in_accept)
         {
             int temp_ac;
-            in_ac >> temp_ac;
+            in_accept >> temp_ac;
             acceptVec.push_back(temp_ac);
         }
-        in_ac.close();
+        in_accept.close();
     }
-    // printf("acceptVec size = %d\n",acceptVec.size());
-    vector<int> vecTable;
+
+    // 将状态转移表tableFile读入tableVec
+    vector<int> tableVec;
     ifstream in_table;
     in_table.open(tableFile);
     if (in_table.is_open())
@@ -48,9 +47,9 @@ FSM *readFromFile(char *tableFile, char *acceptFile)
                 {
                     int temp_n;
                     stream >> temp_n;
-                    if (count < 256)
+                    if (count < LENGTH_MAX)
                     {
-                        vecTable.push_back(temp_n);
+                        tableVec.push_back(temp_n);
                     }
                     count++;
                 }
@@ -58,15 +57,16 @@ FSM *readFromFile(char *tableFile, char *acceptFile)
         }
     }
 
-    int *list_ = new int[(int)vecTable.size()];
-    bool *accept_ = new bool[(int)vecTable.size() / 256];
-    for (int i = 0; i < (int)vecTable.size() / 256; i++)
+    int *list_ = new int[(int)tableVec.size()];
+    bool *accept_ = new bool[(int)tableVec.size() / LENGTH_MAX];
+    // 初始accept_为false
+    for (int i = 0; i < (int)tableVec.size() / LENGTH_MAX; i++)
     {
         accept_[i] = false;
     }
-    for (int i = 0; i < vecTable.size(); i++)
+    for (int i = 0; i < tableVec.size(); i++)
     {
-        list_[i] = vecTable[i];
+        list_[i] = tableVec[i];
     }
     for (auto it = acceptVec.begin(); it != acceptVec.end(); it++)
     {
@@ -102,7 +102,7 @@ int main(int argc, char **argv)
         state = 0;
         for (int j = 0; j < len; j++)
         {
-            state = fsm->list[state * 256 + token[j]];
+            state = fsm->list[state * LENGTH_MAX + token[j]];
             if(fsm->accept[state]) g_match++;
             g_scan++;
         }

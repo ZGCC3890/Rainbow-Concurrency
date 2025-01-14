@@ -7,6 +7,7 @@
 #include <sys/types.h>
 #include <dirent.h>
 #include <cstring>
+#define LENGTH_MAX 256
 #define DICTIONARY_BYTES 122784
 typedef struct
 {
