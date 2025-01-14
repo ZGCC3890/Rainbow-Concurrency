@@ -2,3 +2,7 @@
 77	720	7567600891697402	CMakeFiles/Rainbow-naive.dir/src/utils.cpp.obj	b82b3d817b2e6b55
 4	944	7567601239871915	CMakeFiles/Rainbow-naive.dir/src/main.cpp.obj	58f34d1f6f42277b
 944	1278	7567601243176962	Rainbow-naive.exe	3ccbc7d1203dd458
+4	512	7585440567100862	CMakeFiles/Rainbow-naive.dir/src/dictionary.cpp.obj	8c4d95d05021caf3
+206	1320	7585440574984043	CMakeFiles/Rainbow-naive.dir/src/utils.cpp.obj	b82b3d817b2e6b55
+94	1324	7585440575199979	CMakeFiles/Rainbow-naive.dir/src/main.cpp.obj	58f34d1f6f42277b
+1324	1684	7585440578772249	Rainbow-naive.exe	5995f82b7032561c
