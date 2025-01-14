@@ -1,25 +1,5 @@
 # ninja log v5
-119	852	7584638943969727	CMakeFiles/Rainbow-concurrency-3threads.dir/src/utils.cpp.obj	a4d854489adb21c4
-4	1072	7584638946152302	CMakeFiles/Rainbow-concurrency-3threads.dir/src/main.cpp.obj	dd4a4945a6452076
-1072	1427	7584638949683027	Rainbow-concurrency-3threads.exe	3da6e556c02f7753
-4	591	7585444370668900	CMakeFiles/Rainbow-concurrency-3threads.dir/src/dictionary.cpp.obj	c4d05144312a3434
-110	1399	7585444378756644	CMakeFiles/Rainbow-concurrency-3threads.dir/src/main.cpp.obj	dd4a4945a6452076
-243	1403	7585444378781794	CMakeFiles/Rainbow-concurrency-3threads.dir/src/utils.cpp.obj	a4d854489adb21c4
-1403	1830	7585444383008653	Rainbow-concurrency-3threads.exe	20e894b350e88fd
-4	1188	7585444526052368	CMakeFiles/Rainbow-concurrency-3threads.dir/src/main.cpp.obj	dd4a4945a6452076
-1195	1634	7585444530234611	Rainbow-concurrency-3threads.exe	20e894b350e88fd
-4	1193	7585444665644363	CMakeFiles/Rainbow-concurrency-3threads.dir/src/main.cpp.obj	dd4a4945a6452076
-1194	1643	7585444669802179	Rainbow-concurrency-3threads.exe	20e894b350e88fd
-4	1239	7585445968705252	CMakeFiles/Rainbow-concurrency-3threads.dir/src/main.cpp.obj	dd4a4945a6452076
-1240	1731	7585445973604615	Rainbow-concurrency-3threads.exe	20e894b350e88fd
-3	1233	7585446097464802	CMakeFiles/Rainbow-concurrency-3threads.dir/src/main.cpp.obj	dd4a4945a6452076
-1234	1654	7585446101625687	Rainbow-concurrency-3threads.exe	20e894b350e88fd
-4	1198	7585446296530707	CMakeFiles/Rainbow-concurrency-3threads.dir/src/main.cpp.obj	dd4a4945a6452076
-1199	1599	7585446301061858	Rainbow-concurrency-3threads.exe	20e894b350e88fd
-4	1088	7585447495536423	CMakeFiles/Rainbow-concurrency-3threads.dir/src/main.cpp.obj	dd4a4945a6452076
-1088	1441	7585447499028021	Rainbow-concurrency-3threads.exe	20e894b350e88fd
-4	1059	7585462281503531	CMakeFiles/Rainbow-concurrency-3threads.dir/src/utils.cpp.obj	a4d854489adb21c4
-1059	1483	7585462285717770	Rainbow-concurrency-3threads.exe	20e894b350e88fd
-3	1265	7585462484026760	CMakeFiles/Rainbow-concurrency-3threads.dir/src/main.cpp.obj	dd4a4945a6452076
 111	1267	7585462484101963	CMakeFiles/Rainbow-concurrency-3threads.dir/src/utils.cpp.obj	a4d854489adb21c4
+3	1265	7585462484026760	CMakeFiles/Rainbow-concurrency-3threads.dir/src/main.cpp.obj	dd4a4945a6452076
+4	591	7585444370668900	CMakeFiles/Rainbow-concurrency-3threads.dir/src/dictionary.cpp.obj	c4d05144312a3434
 1267	1697	7585462488372605	Rainbow-concurrency-3threads.exe	20e894b350e88fd
