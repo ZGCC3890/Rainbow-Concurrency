@@ -10,12 +10,11 @@
 #include <cstring>
 #include <fstream>
 #include <sstream>
-#include <thread>
-#include "lockFreeQueue.h"
 
 #define LEN_DICT (122784+1)
 #define LEN_RINGBUF 32000000
 
+extern bool threadEnd;
 extern unsigned long g_literals;
 extern unsigned long g_spend;
 extern unsigned long g_scan;
@@ -58,7 +57,7 @@ int readFileName(char *path, std::vector<std::string> &name);
 FSM* readFsmTable(char* tableFile, char* acceptFile);
 void GetDictionaryState(short* DictionaryState, FSM* fsm);
 
-short SkipStaticPointer(int length, int dist, FSM* fsm, short state, short* stateArray, int position);
+short SkipStaticPointer(unsigned int length, int dist, FSM* fsm, short state, short* stateArray, int position);
 short SkipDynamicPointer(unsigned char* contents, int length, int dist, FSM* fsm, short state, short* stateArray, int position);
 
 short SkipStaticPointer2(int length, int dist, FSM* fsm, register short state, short* stateArray, int position);

@@ -4,9 +4,12 @@
 #include <algorithm>
 #include <sys/time.h>
 #include <iostream>
-#define ACTION
+#include <thread>
+#include "concurrency.h"
 
 using namespace std;
+
+bool threadEnd = false;
 
 // _input即解压后明文 _meta即metaData文件 rule即状态转移表 accept即结束状态 set即数据集 rounds即循环次数
 int main(int argc, char **argv) {
@@ -50,7 +53,6 @@ int main(int argc, char **argv) {
     readFileName(_input, InputName);
     readFileName(_meta, MetaName);
 
-    //排序
     sort(InputName.begin(), InputName.end());
     sort(MetaName.begin(), MetaName.end());
 
@@ -83,49 +85,17 @@ int main(int argc, char **argv) {
     for (int i = 0; i < count; i++)
         metaSize[i] = metaInput[i].size / sizeof(MetaData);
 
+    LockFreeQueue<Messenger> copyMeta(16384);
     short state = 0;
     struct timeval tv;
     gettimeofday(&tv, NULL);
     long start = tv.tv_sec * 1000 + tv.tv_usec / 1000;
     for (int r = 0; r < rounds; r++) {
-        for (int i = 0; i < count; i++) {
-            unsigned char *text = contents[i].pBuff;
-            MetaData *meta = (MetaData *) metaInput[i].pBuff;
-            int pos = 0;
-            state = 0;
-
-            for (int j = 0; j < metaSize[i]; j++) {
-                unsigned int ins = meta[j].ins;
-                unsigned int len = meta[j].len;
-                for (int k = 0; k < ins; k++) {
-                    ScanByte(state, text[pos], fsm);
-                    stateArray[pos + LEN_DICT] = state;
-                    pos++;
-
-#ifdef ACTION
-                    g_literals++;
-#endif
-                }
-                // scan pointer
-                if (len > 0) {
-//                    state = ScanPointerWhile(len, meta[j].dist, pos, state, fsm, stateArray, text);
-//                    state = ScanPointer(len, meta[j].dist, pos, state, fsm, stateArray, text);
-
-                    int dist = meta[j].dist;
-                    if (dist < 0) {
-                        state = SkipDynamicPointer(text, len, dist, fsm, state, stateArray, pos);
-                    } else {
-                        state = SkipStaticPointer(len, dist, fsm, state, stateArray, pos);
-                    }
-
-                    pos += len;
-#ifdef ACTION
-                    g_pointer_len += len;
-                    g_pointer_count++;
-#endif
-                }
-            }
-        }
+        threadEnd = false;
+        thread scanT(scanThread, std::ref(copyMeta), count, std::ref(contents), std::ref(metaInput), std::ref(metaSize), state, std::ref(stateArray), std::ref(fsm));
+        thread copyT(copyThread, std::ref(copyMeta), std::ref(stateArray), std::ref(fsm));
+        scanT.join();
+        copyT.join();
     }
 
     gettimeofday(&tv, NULL);

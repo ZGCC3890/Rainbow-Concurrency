@@ -2,11 +2,18 @@
 // Created by ZGCC on 25-1-15.
 //
 
-#ifndef LOCKFREEQUEUE_H
-#define LOCKFREEQUEUE_H
+#ifndef CONCURRENCY_H
+#define CONCURRENCY_H
 
 #include <atomic>
 #include <mutex>
+
+typedef struct Messenger{
+    int pos;
+    short curState;
+    unsigned char *text;
+    MetaData meta;
+}Messenger;
 
 // 参考linux内核中的kfifo算法，利用环形缓冲区实现单生产者单消费者无锁队列
 template <typename T>
@@ -24,7 +31,7 @@ public:
     LockFreeQueue(const LockFreeQueue&) = delete;
     LockFreeQueue& operator=(const LockFreeQueue&) = delete;
 
-    // 入队操作（生产者）
+    // 入队
     bool enqueue(const T& value) {
         size_t current_tail = tail.load(std::memory_order_relaxed);
         size_t next_tail = (current_tail + 1) & mask;
@@ -39,7 +46,7 @@ public:
         return true;
     }
 
-    // 出队操作（消费者）
+    // 出队
     bool dequeue(T& value) {
         size_t current_head = head.load(std::memory_order_relaxed);
 
@@ -89,4 +96,12 @@ private:
         mask = new_capacity - 1;
     }
 };
-#endif //LOCKFREEQUEUE_H
+
+// 扫描线程，负责判断当前是token还是pointer，是token就直接计算状态，否则将meta送入copyThread()
+void scanThread(LockFreeQueue<Messenger> &copyMeta_, int count, std::vector<MemBuf> &contents_, std::vector<MemBuf> &metaInput_, int *metaSize_, short curState, short *stateArray_, FSM* fsm_);
+
+void copyThread(LockFreeQueue<Messenger> &copyMeta_, short *stateArray_, FSM* fsm_);
+
+void checkThread();
+
+#endif //CONCURRENCY_H

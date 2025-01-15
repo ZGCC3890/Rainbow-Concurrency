@@ -102,7 +102,8 @@
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
-				4
+				4,
+				5
 			]
 		}
 	],
@@ -111,13 +112,13 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/dictionary.cpp",
+			"path" : "src/concurrency.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/lock-free.cpp",
+			"path" : "src/dictionary.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -131,6 +132,11 @@
 			"compileGroupIndex" : 0,
 			"path" : "src/utils.cpp",
 			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/concurrency.h",
+			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,

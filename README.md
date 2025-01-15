@@ -21,5 +21,23 @@ A concurrency version of Rainbow
 <li><a href="#naive">naive</a> </li>
 
 ## <h2 id = "concurrency-3threads">concurrency-3threads</h2>
+### scanThread
+即主线程，负责扫描当前字段是token还是pointer，是pointer就丢给copy线程复制状态  
+```cpp
+void scanThread(int count, std::vector<MemBuf> &contents_, std::vector<MemBuf> &metaInput_, int *metaSize_, short curState, short *stateArray_, FSM* fsm_);
+```
+int count - pointer总数  
+std::vector<MemBuf> &contents_ - 文本内容  
+std::vector<MemBuf> &metaInput_ - metaData输入缓冲区      
+int &#42;metaSize_ - metaData长度数组  
+short curState - 当前字符状态  
+short&#42; stateArray_ - 状态数组  
+FSM&#42; fsm_ - 状态转移表和结束状态表
+### copyThread
+
+接收参数：  
+lockFreeQueue< MetaData > copyPointer, 
+### checkThread
+接收参数：  
 
 ## <h2 id = "naive">naive</h2>

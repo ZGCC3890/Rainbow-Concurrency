@@ -3,6 +3,7 @@
 #include <string>
 #include <algorithm>
 #include <sys/time.h>
+#define ACTION
 
 using namespace std;
 

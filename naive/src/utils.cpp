@@ -1,7 +1,7 @@
 #include "utils.h"
 #include <sys/time.h>
 #include <dirent.h>
-
+#define ACTION
 unsigned long g_spend = 0;
 unsigned long g_literals = 0;
 unsigned long g_pointer_len = 0;
@@ -34,7 +34,7 @@ void printPerformance(int rounds)
 	printf("throughput %.2f mbps\n", (compress * 8) / (double)(g_spend) / 1000);
 	printf("literals: %ld\n", g_literals/=rounds);
 	printf("pointer ratio: %.2f%%\n", 100 * (1.0 - (g_literals * 1.0 / total)));
-	printf("average pointer length = %.2f\n", (g_pointer_len * 1.0) / g_pointer_count);
+    printf("average pointer length = %.2f, pointer_len = %ld, pointer_count = %ld\n", (g_pointer_len * 1.0) / g_pointer_count, g_pointer_len, g_pointer_count);
 }
 
 int readFileName(char *path,vector<string> &name)
