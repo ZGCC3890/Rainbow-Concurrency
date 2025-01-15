@@ -11,7 +11,7 @@
 #include <fstream>
 #include <sstream>
 #include <thread>
-#include <atomic>
+#include "lockFreeQueue.h"
 
 #define LEN_DICT (122784+1)
 #define LEN_RINGBUF 32000000
@@ -68,25 +68,5 @@ short ScanPointer(int len, int dist, int pos, short state, FSM* fsm, short* stat
 short ScanPointerWhile(int len, int dist, int pos, short state, FSM* fsm, short* stateArray, unsigned char* content);
 
 int LoadText(char *path, std::vector<MemBuf> &buff, std::vector<std::string> &name);
-
-template <typename T>
-class LockFreeQueue {
-public:
-    explicit LockFreeQueue(size_t capacity); // 构造函数
-
-    // 禁止拷贝和赋值
-    LockFreeQueue(const LockFreeQueue&) = delete;
-    LockFreeQueue& operator=(const LockFreeQueue&) = delete;
-
-    // 成员函数声明
-    void enqueue(const T& value);  // 入队操作
-    T dequeue();                   // 出队操作
-    bool isEmpty();                // 是否为空
-
-private:
-    std::vector<T> buffer;               // 队列缓冲区
-    std::atomic<size_t> head, tail;      // 原子变量：队列头和尾的索引
-    const size_t capacity;               // 队列容量
-};
 
 #endif
