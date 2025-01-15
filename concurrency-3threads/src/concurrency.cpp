@@ -7,7 +7,9 @@
 #include <iostream>
 #define ACTION
 
+
 void scanThread(LockFreeQueue<Messenger> &copyMeta_, int count, std::vector<MemBuf> &contents_, std::vector<MemBuf> &metaInput_, int *metaSize_, short curState, short *stateArray_, FSM* fsm_){
+    std::freopen("output.txt", "w", stdout);
     for (int i = 0; i < count; i++) {
         unsigned char *text = contents_[i].pBuff;
         MetaData *meta = (MetaData *) metaInput_[i].pBuff;
@@ -31,11 +33,18 @@ void scanThread(LockFreeQueue<Messenger> &copyMeta_, int count, std::vector<MemB
             // 读pointer给copyThread
             if (len > 0) {
                 copyMeta_.enqueue({pos, curState, text, meta[j]});
+                // 直接将pointer指向位置的最后一个状态拿来作为下一个四元组的初始状态
+                short* refer = stateArray_ + LEN_DICT + pos + meta[j].dist + len - 1;
+                curState = *refer;
+                if(g_literals < 10000) {
+                    std::cout << curState << " " << pos << " " << j << std::endl;
+                }
                 pos += len;
             }
         }
     }
     threadEnd = true;
+    std::freopen("CON", "w", stdout);
 }
 
 void copyThread(LockFreeQueue<Messenger> &copyMeta_, short *stateArray_, FSM* fsm_) {

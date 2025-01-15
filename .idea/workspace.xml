@@ -21,35 +21,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68beca76-34ee-40ac-a113-92d0802b6048" name="更改" comment="导入naive">
-      <change afterPath="$PROJECT_DIR$/concurrency-3threads/src/concurrency.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concurrency-3threads/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/concurrency-3threads/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concurrency-3threads/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-1cd49134004d69c329d0.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/concurrency-3threads/cmake-build-debug/.cmake/api/v1/reply/index-2025-01-14T09-14-11-0563.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/concurrency-3threads/cmake-build-debug/.cmake/api/v1/reply/target-Rainbow-concurrency-3threads-Debug-532358a0f24c245dfadd.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/concurrency-3threads/cmake-build-debug/.cmake/api/v1/reply/index-2025-01-15T11-08-04-0406.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/concurrency-3threads/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/concurrency-3threads/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/concurrency-3threads/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/concurrency-3threads/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concurrency-3threads/cmake-build-debug/CMakeFiles/Rainbow-concurrency-3threads.dir/src/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/concurrency-3threads/cmake-build-debug/CMakeFiles/Rainbow-concurrency-3threads.dir/src/main.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concurrency-3threads/cmake-build-debug/CMakeFiles/Rainbow-concurrency-3threads.dir/src/utils.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/concurrency-3threads/cmake-build-debug/CMakeFiles/Rainbow-concurrency-3threads.dir/src/utils.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concurrency-3threads/cmake-build-debug/CMakeFiles/Rainbow-concurrency-3threads.dir/src/concurrency.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/concurrency-3threads/cmake-build-debug/CMakeFiles/Rainbow-concurrency-3threads.dir/src/concurrency.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/concurrency-3threads/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/concurrency-3threads/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/concurrency-3threads/cmake-build-debug/Rainbow-concurrency-3threads.exe" beforeDir="false" afterPath="$PROJECT_DIR$/concurrency-3threads/cmake-build-debug/Rainbow-concurrency-3threads.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/concurrency-3threads/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/concurrency-3threads/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concurrency-3threads/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/concurrency-3threads/cmake-build-debug/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concurrency-3threads/src/lockFreeQueue.h" beforeDir="false" afterPath="$PROJECT_DIR$/concurrency-3threads/src/concurrency.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concurrency-3threads/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/concurrency-3threads/src/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concurrency-3threads/src/utils.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/concurrency-3threads/src/utils.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concurrency-3threads/src/utils.h" beforeDir="false" afterPath="$PROJECT_DIR$/concurrency-3threads/src/utils.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/.cmake/api/v1/reply/index-2025-01-14T07-01-37-0375.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/concurrency-3threads/src/concurrency.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/concurrency-3threads/src/concurrency.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/.cmake/api/v1/reply/index-2025-01-15T11-06-02-0655.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/naive/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/naive/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/Rainbow-naive.dir/src/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/Rainbow-naive.dir/src/main.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/Rainbow-naive.dir/src/utils.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/Rainbow-naive.dir/src/utils.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/Rainbow-naive.exe" beforeDir="false" afterPath="$PROJECT_DIR$/naive/cmake-build-debug/Rainbow-naive.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/naive/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/naive/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/naive/src/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/naive/src/utils.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/naive/src/utils.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,13 +97,18 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="CMake 应用程序.Rainbow-concurrency-2threads">
+  <component name="RunManager" selected="CMake 应用程序.Rainbow-concurrency-3threads">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Rainbow-concurrency-2threads" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../input ../pattern/pattern_rule.txt ../pattern/pattern_accept.txt" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Rainbow-concurrency-3threads" TARGET_NAME="Rainbow-concurrency-2threads" RUN_TARGET_PROJECT_NAME="Rainbow-concurrency-3threads" RUN_TARGET_NAME="Rainbow-concurrency-2threads">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Rainbow-concurrency-3threads" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../../datasets/Brotli/Google/decompressed1/ ../../datasets/Brotli/Google/decoded1/ ../../tables/snort31.txt ../../tables/snort31-accept.txt 2 1" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Rainbow-concurrency-3threads" TARGET_NAME="Rainbow-concurrency-3threads" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Rainbow-concurrency-3threads" RUN_TARGET_NAME="Rainbow-concurrency-3threads">
+    <configuration name="Rainbow-concurrency-3threads" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../../datasets/Brotli/Alexa/decompressed/ ../../datasets/Brotli/Alexa/decoded/ ../../tables/snort24.txt ../../tables/snort24-accept.txt 1 1" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Rainbow-concurrency-3threads" TARGET_NAME="Rainbow-concurrency-3threads" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Rainbow-concurrency-3threads" RUN_TARGET_NAME="Rainbow-concurrency-3threads">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -128,7 +118,7 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Rainbow-naive" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../../datasets/Brotli/Google/decompressed1/ ../../datasets/Brotli/Google/decoded1/ ../../tables/snort31.txt ../../tables/snort31-accept.txt 2 1" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Rainbow-concurrency-3threads" TARGET_NAME="Rainbow-naive" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Rainbow-concurrency-3threads" RUN_TARGET_NAME="Rainbow-naive">
+    <configuration name="Rainbow-naive" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../../datasets/Brotli/Alexa/decompressed/ ../../datasets/Brotli/Alexa/decoded/ ../../tables/snort24.txt ../../tables/snort24-accept.txt 1 1" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Rainbow-concurrency-3threads" TARGET_NAME="Rainbow-naive" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Rainbow-concurrency-3threads" RUN_TARGET_NAME="Rainbow-naive">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -183,7 +173,8 @@
       <workItem from="1736937712146" duration="607000" />
       <workItem from="1736938348868" duration="207000" />
       <workItem from="1736938565273" duration="2499000" />
-      <workItem from="1736941094450" duration="1000" />
+      <workItem from="1736941094450" duration="43000" />
+      <workItem from="1736954723484" duration="4250000" />
     </task>
     <task id="LOCAL-00001" summary="导入naive">
       <option name="closed" value="true" />
