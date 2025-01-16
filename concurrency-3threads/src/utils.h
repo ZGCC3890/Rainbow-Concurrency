@@ -14,7 +14,6 @@
 #define LEN_DICT (122784+1)
 #define LEN_RINGBUF 32000000
 
-extern bool threadEnd;
 extern unsigned long g_literals;
 extern unsigned long g_spend;
 extern unsigned long g_scan;

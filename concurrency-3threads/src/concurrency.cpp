@@ -4,14 +4,11 @@
 #include "utils.h"
 #include "concurrency.h"
 #include <vector>
-#include <iostream>
 #define ACTION
 
-
 void scanThread(LockFreeQueue<Messenger> &copyMeta_, int count, std::vector<MemBuf> &contents_, std::vector<MemBuf> &metaInput_, int *metaSize_, short curState, short *stateArray_, FSM* fsm_){
-    std::freopen("output.txt", "w", stdout);
     for (int i = 0; i < count; i++) {
-        unsigned char *text = contents_[i].pBuff;
+        unsigned char* text = contents_[i].pBuff;
         MetaData *meta = (MetaData *) metaInput_[i].pBuff;
         int pos = 0;
         curState = 0;
@@ -28,50 +25,102 @@ void scanThread(LockFreeQueue<Messenger> &copyMeta_, int count, std::vector<MemB
                 pos++;
 #ifdef ACTION
                 g_literals++;
+                if (fsm_->accept[curState]) g_match++;
 #endif
             }
             // 读pointer给copyThread
             if (len > 0) {
-                copyMeta_.enqueue({pos, curState, text, meta[j]});
+                copyMeta_.enqueue({pos, curState, meta[j], text});
                 // 直接将pointer指向位置的最后一个状态拿来作为下一个四元组的初始状态
                 short* refer = stateArray_ + LEN_DICT + pos + meta[j].dist + len - 1;
                 curState = *refer;
-                if(g_literals < 10000) {
-                    std::cout << curState << " " << pos << " " << j << std::endl;
-                }
                 pos += len;
             }
         }
     }
-    threadEnd = true;
-    std::freopen("CON", "w", stdout);
+    scanThreadEnd = true;
 }
 
-void copyThread(LockFreeQueue<Messenger> &copyMeta_, short *stateArray_, FSM* fsm_) {
-//    curState = ScanPointerWhile(len, meta[j].dist, pos, state, fsm, stateArray, text);
-//    curState = ScanPointer(len, meta[j].dist, pos, state, fsm, stateArray, text);
+void copyThread(LockFreeQueue<Messenger> &copyMeta_, LockFreeQueue<Messenger> &checkMeta_, short *stateArray_, FSM* fsm_) {
     Messenger messenger;
     while (true) {
         if(copyMeta_.dequeue(messenger)) {
             int dist = messenger.meta.dist;
             unsigned int len = messenger.meta.len;
-            if (dist < 0) {
-                messenger.curState = SkipDynamicPointer(messenger.text, len, dist, fsm_, messenger.curState,
-                                                        stateArray_,
-                                                        messenger.pos);
-            } else {
-                messenger.curState = SkipStaticPointer(len, dist, fsm_, messenger.curState, stateArray_, messenger.pos);
+            int pos = messenger.pos;
+            if(dist < 0) {
+//                messenger.curState = SkipDynamicPointer(messenger.text, len, dist, fsm_, messenger.curState, stateArray_, pos);
+                // 复制状态
+                short *cur = stateArray_ + LEN_DICT + pos;
+                short *refer = cur + dist - 1;
+                if (dist+len <= 0)
+                {
+                    memcpy(cur, refer, sizeof(short)*(len+1));
+                }
+                else
+                {
+                    for (int i=1; i<=len; i++)
+                        *(cur+i) = *(refer+i);
+                    *cur = *refer;
+                }
             }
-#ifdef ACTION
-            g_pointer_len += len;
-            g_pointer_count++;
-#endif
+            else{
+//                messenger.curState = SkipStaticPointer(len, dist, fsm_, messenger.curState, stateArray_, pos);
+                short* refer = stateArray_ + dist - 1;
+                short* cur = stateArray_ + LEN_DICT + pos;
+                memcpy(cur, refer, sizeof(short) * (len+1));
+                for (int p = 0; p < len; p++, cur++)
+                {
+                    *cur = messenger.curState;
+                    messenger.curState = ScanByte(messenger.curState, kBrotliDictionaryData[dist++], fsm_);
+                }
+            }
+            checkMeta_.enqueue(messenger);
         }
-        else if(threadEnd) break;
+        else if(scanThreadEnd){
+            copyThreadEnd = true;
+            break;
+        }
     }
 }
 
 
-void checkThread(){
-
+void checkThread(LockFreeQueue<Messenger> &checkMeta_, short *stateArray_, FSM* fsm_){
+    Messenger messenger;
+    while(true){
+        if(checkMeta_.dequeue(messenger)) {
+            int dist = messenger.meta.dist;
+            unsigned int len = messenger.meta.len;
+            int pos = messenger.pos;
+            short* cur = stateArray_ + LEN_DICT + pos;
+            short* refer = cur + dist - 1;
+            unsigned char* token = messenger.text + pos + dist;
+            for (int i = 0; i < len; ++i, ++cur, ++refer) {
+                // 当前状态等于之前的状态，复制无误，跳过
+                if(*cur == *refer){
+#ifdef ACTION
+                    for (int j = 0; j < len - i; j++) {
+                        if (fsm_->accept[cur[j + i]]) g_match++;
+                    }
+#endif
+                    break;
+                }
+                else{   // 否则说明需要重新计算状态
+                    if(dist < 0){
+                        *cur = messenger.curState;
+                        messenger.curState = ScanByte(messenger.curState, *token, fsm_);
+                    }
+                    else{
+                        *cur = ScanByte(messenger.curState, kBrotliDictionaryData[dist++], fsm_);
+                    }
+#ifdef ACTION
+                    if (fsm_->accept[*cur]) g_match++;
+#endif
+                }
+            }
+        }
+        else if(copyThreadEnd){
+            break;
+        }
+    }
 }

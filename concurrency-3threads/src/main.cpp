@@ -6,10 +6,12 @@
 #include <iostream>
 #include <thread>
 #include "concurrency.h"
+#define ACTION
 
 using namespace std;
 
-bool threadEnd = false;
+bool scanThreadEnd = false;
+bool copyThreadEnd = false;
 
 // _input即解压后明文 _meta即metaData文件 rule即状态转移表 accept即结束状态 set即数据集 rounds即循环次数
 int main(int argc, char **argv) {
@@ -86,17 +88,30 @@ int main(int argc, char **argv) {
         metaSize[i] = metaInput[i].size / sizeof(MetaData);
 
     LockFreeQueue<Messenger> copyMeta(16384);
+    LockFreeQueue<Messenger> checkMeta(16384);
     short state = 0;
     struct timeval tv;
     gettimeofday(&tv, NULL);
     long start = tv.tv_sec * 1000 + tv.tv_usec / 1000;
     for (int r = 0; r < rounds; r++) {
-        threadEnd = false;
+        scanThreadEnd = false;
+        copyThreadEnd = false;
         thread scanT(scanThread, std::ref(copyMeta), count, std::ref(contents), std::ref(metaInput), std::ref(metaSize), state, std::ref(stateArray), std::ref(fsm));
-        thread copyT(copyThread, std::ref(copyMeta), std::ref(stateArray), std::ref(fsm));
+        thread copyT(copyThread, std::ref(copyMeta), std::ref(checkMeta), std::ref(stateArray), std::ref(fsm));
+        thread checkT(checkThread, std::ref(checkMeta), std::ref(stateArray), std::ref(fsm));
         scanT.join();
         copyT.join();
+        checkT.join();
     }
+#ifdef ACTION
+    std::freopen("output.txt", "w", stdout);
+    for (int i = 0; i < 1; ++i) {
+        for (int j = 0; j < contents[i].size; ++j) {
+            std::cout << stateArray[j + LEN_DICT] << " ";
+        }
+    }
+    std::freopen("CON", "w", stdout);
+#endif
 
     gettimeofday(&tv, NULL);
     long end = tv.tv_sec * 1000 + tv.tv_usec / 1000;

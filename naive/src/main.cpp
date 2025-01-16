@@ -3,6 +3,7 @@
 #include <string>
 #include <algorithm>
 #include <sys/time.h>
+#include <iostream>
 #define ACTION
 
 using namespace std;
@@ -140,6 +141,15 @@ int main(int argc, char **argv)
             }
         }
     }
+#ifdef ACTION
+    std::freopen("output.txt", "w", stdout);
+    for (int i = 0; i < 1; ++i) {
+        for (int j = 0; j < contents[i].size; ++j) {
+            std::cout << stateArray[j + LEN_DICT] << " ";
+        }
+    }
+    std::freopen("CON", "w", stdout);
+#endif
     gettimeofday(&tv,NULL);
     long end = tv.tv_sec*1000 + tv.tv_usec/1000;
     g_spend = end - start;
