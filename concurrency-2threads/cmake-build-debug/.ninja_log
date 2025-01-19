@@ -1,8 +1,6 @@
 # ninja log v5
 461	1835	7589698797195509	CMakeFiles/Rainbow-concurrency-2threads.dir/src/utils.cpp.obj	6d613b50c6fb7426
 4	1534	7589704004404953	CMakeFiles/Rainbow-concurrency-2threads.dir/src/main.cpp.obj	131ca4a8785868b4
-995	1372	7589757352082686	Rainbow-concurrency-2threads.exe	18f2ffd79d146df6
-150	1644	7589698793150634	CMakeFiles/Rainbow-concurrency-2threads.dir/src/dictionary.cpp.obj	ab387a1505aa016e
-4	994	7589757348347990	CMakeFiles/Rainbow-concurrency-2threads.dir/src/concurrency.cpp.obj	9d2e6865c976579c
-4	846	7589758841914902	CMakeFiles/Rainbow-concurrency-2threads.dir/src/concurrency.cpp.obj	9d2e6865c976579c
 847	1218	7589758845571827	Rainbow-concurrency-2threads.exe	18f2ffd79d146df6
+150	1644	7589698793150634	CMakeFiles/Rainbow-concurrency-2threads.dir/src/dictionary.cpp.obj	ab387a1505aa016e
+4	846	7589758841914902	CMakeFiles/Rainbow-concurrency-2threads.dir/src/concurrency.cpp.obj	9d2e6865c976579c
