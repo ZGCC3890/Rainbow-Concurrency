@@ -49,6 +49,12 @@ cmake_ninja_workdir = F$:/JetBrains/Rainbow-Concurrency/naive/cmake-build-debug/
 
 build cmake_object_order_depends_target_Rainbow-naive: phony || CMakeFiles/Rainbow-naive.dir
 
+build CMakeFiles/Rainbow-naive.dir/src/dictionary.cpp.obj: CXX_COMPILER__Rainbow-naive_unscanned_Debug F$:/JetBrains/Rainbow-Concurrency/naive/src/dictionary.cpp || cmake_object_order_depends_target_Rainbow-naive
+  DEP_FILE = CMakeFiles\Rainbow-naive.dir\src\dictionary.cpp.obj.d
+  FLAGS = -O2 -g -std=gnu++11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Rainbow-naive.dir
+  OBJECT_FILE_DIR = CMakeFiles\Rainbow-naive.dir\src
+
 build CMakeFiles/Rainbow-naive.dir/src/main.cpp.obj: CXX_COMPILER__Rainbow-naive_unscanned_Debug F$:/JetBrains/Rainbow-Concurrency/naive/src/main.cpp || cmake_object_order_depends_target_Rainbow-naive
   DEP_FILE = CMakeFiles\Rainbow-naive.dir\src\main.cpp.obj.d
   FLAGS = -O2 -g -std=gnu++11 -fdiagnostics-color=always
@@ -69,7 +75,7 @@ build CMakeFiles/Rainbow-naive.dir/src/utils.cpp.obj: CXX_COMPILER__Rainbow-naiv
 #############################################
 # Link the executable Rainbow-naive.exe
 
-build Rainbow-naive.exe: CXX_EXECUTABLE_LINKER__Rainbow-naive_Debug CMakeFiles/Rainbow-naive.dir/src/main.cpp.obj CMakeFiles/Rainbow-naive.dir/src/utils.cpp.obj
+build Rainbow-naive.exe: CXX_EXECUTABLE_LINKER__Rainbow-naive_Debug CMakeFiles/Rainbow-naive.dir/src/dictionary.cpp.obj CMakeFiles/Rainbow-naive.dir/src/main.cpp.obj CMakeFiles/Rainbow-naive.dir/src/utils.cpp.obj
   FLAGS = -O2 -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Rainbow-naive.dir
