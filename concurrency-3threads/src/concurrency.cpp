@@ -4,7 +4,7 @@
 #include "utils.h"
 #include "concurrency.h"
 #include <vector>
-#define ACTION
+//#define ACTION
 
 void scanThread(LockFreeQueue<Messenger> &copyMeta_, int count, std::vector<MemBuf> &contents_, std::vector<MemBuf> &metaInput_, int *metaSize_, short curState, short *stateArray_, FSM* fsm_){
     for (int i = 0; i < count; i++) {
@@ -49,31 +49,31 @@ void copyThread(LockFreeQueue<Messenger> &copyMeta_, LockFreeQueue<Messenger> &c
             unsigned int len = messenger.meta.len;
             int pos = messenger.pos;
             if(dist < 0) {
-                messenger.curState = SkipDynamicPointer(messenger.text, len, dist, fsm_, messenger.curState, stateArray_, pos);
+//                messenger.curState = SkipDynamicPointer(messenger.text, len, dist, fsm_, messenger.curState, stateArray_, pos);
                 // 复制状态
-//                short *cur = stateArray_ + LEN_DICT + pos;
-//                short *refer = cur + dist - 1;
-//                if (cur - refer >= len)
-//                {
-//                    memcpy(cur, refer + 1, sizeof(short) * len);
-//                }
-//                else
-//                {
-//                    for (int i = 0; i <= len; i++)
-//                        *(cur+i) = *(refer+i);
-//                    *cur = *refer;
-//                }
+                short *cur = stateArray_ + LEN_DICT + pos;
+                short *refer = cur + dist - 1;
+                if (cur - refer >= len)
+                {
+                    memcpy(cur, refer + 1, sizeof(short) * len);
+                }
+                else
+                {
+                    for (int i = 0; i <= len; i++)
+                        *(cur+i) = *(refer+i);
+                    *cur = *refer;
+                }
             }
             else{
-                messenger.curState = SkipStaticPointer(len, dist, fsm_, messenger.curState, stateArray_, pos);
-//                short* refer = stateArray_ + dist - 1;
-//                short* cur = stateArray_ + LEN_DICT + pos;
-//                memcpy(cur, refer + 1, sizeof(short) * len);
-//                for (int p = 0; p < len; p++, cur++)
-//                {
-//                    *cur = messenger.curState;
-//                    messenger.curState = ScanByte(messenger.curState, kBrotliDictionaryData[dist++], fsm_);
-//                }
+//                messenger.curState = SkipStaticPointer(len, dist, fsm_, messenger.curState, stateArray_, pos);
+                short* refer = stateArray_ + dist - 1;
+                short* cur = stateArray_ + LEN_DICT + pos;
+                memcpy(cur, refer + 1, sizeof(short) * len);
+                for (int p = 0; p < len; p++, cur++)
+                {
+                    *cur = messenger.curState;
+                    messenger.curState = ScanByte(messenger.curState, kBrotliDictionaryData[dist++], fsm_);
+                }
             }
             checkMeta_.enqueue(messenger);
         }

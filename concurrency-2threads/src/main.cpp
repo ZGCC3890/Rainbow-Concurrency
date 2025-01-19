@@ -96,11 +96,11 @@ int main(int argc, char **argv) {
     for (int r = 0; r < rounds; r++) {
         scanThreadEnd = false;
         copyThreadEnd = false;
-        thread scanT(scanThread, std::ref(copyMeta), count, std::ref(contents), std::ref(metaInput), std::ref(metaSize), state, std::ref(stateArray), std::ref(fsm));
-        thread copyT(copyThread, std::ref(copyMeta), std::ref(checkMeta), std::ref(stateArray), std::ref(fsm));
+        thread scanT(scanThread, std::ref(checkMeta), count, std::ref(contents), std::ref(metaInput), std::ref(metaSize), state, std::ref(stateArray), std::ref(fsm));
+//        thread copyT(copyThread, std::ref(copyMeta), std::ref(checkMeta), std::ref(stateArray), std::ref(fsm));
         thread checkT(checkThread, std::ref(checkMeta), std::ref(stateArray), std::ref(fsm));
         scanT.join();
-        copyT.join();
+//        copyT.join();
         checkT.join();
     }
 #ifdef ACTION

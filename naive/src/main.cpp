@@ -114,6 +114,7 @@ int main(int argc, char **argv)
 
 #ifdef ACTION                    
                     g_literals++;
+                    if (fsm->accept[state]) g_match++;
 #endif
                 }
                 // scan pointer
