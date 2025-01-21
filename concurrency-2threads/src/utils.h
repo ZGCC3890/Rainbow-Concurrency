@@ -14,6 +14,10 @@
 #define LEN_DICT (122784+1)
 #define LEN_RINGBUF 32000000
 
+extern unsigned long wrong_cnt;
+extern unsigned long pointer_count;
+extern unsigned long wrong_pointer_count;
+
 extern unsigned long g_literals;
 extern unsigned long g_spend;
 extern unsigned long g_scan;

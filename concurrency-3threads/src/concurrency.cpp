@@ -69,11 +69,6 @@ void copyThread(LockFreeQueue<Messenger> &copyMeta_, LockFreeQueue<Messenger> &c
                 short* refer = stateArray_ + dist - 1;
                 short* cur = stateArray_ + LEN_DICT + pos;
                 memcpy(cur, refer + 1, sizeof(short) * len);
-                for (int p = 0; p < len; p++, cur++)
-                {
-                    *cur = messenger.curState;
-                    messenger.curState = ScanByte(messenger.curState, kBrotliDictionaryData[dist++], fsm_);
-                }
             }
             checkMeta_.enqueue(messenger);
         }
