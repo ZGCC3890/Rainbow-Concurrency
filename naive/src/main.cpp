@@ -144,9 +144,23 @@ int main(int argc, char **argv)
     }
 #ifdef ACTION
     std::freopen("output.txt", "w", stdout);
+    int t = 0;
+    // 遍历文件
     for (int i = 0; i < 1; ++i) {
-        for (int j = 0; j < contents[i].size; ++j) {
-            std::cout << stateArray[j + LEN_DICT] << " ";
+        unsigned char* text = contents[i].pBuff;
+        MetaData *meta = (MetaData *) metaInput[i].pBuff;
+        int pos = 0;
+        // 遍历metaData
+        for (int j = 0; j < metaSize[i]; ++j) {
+            unsigned int ins = meta[j].ins;
+            unsigned int len = meta[j].len;
+            // 打印token pointer状态
+            for (int k = 0; k < ins + len; ++k, ++t, ++pos) {
+                std::cout << stateArray[pos + LEN_DICT] << " ";
+                if(k == ins - 1) cout << ". ";
+                if(t % 10 == 0) std::cout << std::endl;
+            }
+            cout << "_" << j + 1 << "_ ";
         }
     }
     std::freopen("CON", "w", stdout);

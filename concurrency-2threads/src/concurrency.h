@@ -12,10 +12,10 @@ extern bool scanThreadEnd;
 extern bool copyThreadEnd;
 
 typedef struct Messenger{
-    int pos;
-    short curState;
-    MetaData meta;
-    unsigned char* text;
+    int pos;                // 当前文件指针
+    short preState;         // *cur指针前一位的状态
+    MetaData meta;          // pointer对应metaData结构体
+    unsigned char* text;    // 当前文件指针
 }Messenger;
 
 // 参考linux内核中的kfifo算法，利用环形缓冲区实现单生产者单消费者无锁队列
