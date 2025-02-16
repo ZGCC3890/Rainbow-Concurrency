@@ -8,7 +8,7 @@
 
 #define ACTION
 
-std::mutex mtx;
+unsigned long long checkedPos;
 
 void scanThread(LockFreeQueue<Messenger> &checkMeta_, int count, std::vector<MemBuf> &contents_, std::vector<MemBuf> &metaInput_, int *metaSize_, short curState, short *stateArray_, FSM* fsm_){
     for (int i = 0; i < count; i++) {
@@ -30,15 +30,20 @@ void scanThread(LockFreeQueue<Messenger> &checkMeta_, int count, std::vector<Mem
 #endif
             }
             // 读pointer给copyThread
+            short metaState = 0;
             if (len > 0) {
-                short metaState = curState;
+                 metaState = curState;
                 int dist = meta[j].dist;
                 if (dist < 0) {
 //                    curState = SkipDynamicPointer(text, len, dist, fsm_, curState, stateArray_, pos);
                     // 复制状态
                     short *cur = stateArray_ + LEN_DICT + pos;
                     short *refer = cur + dist - 1;
-                    if (cur - refer >= len) {
+                    while(pos + dist - 1 > checkedPos + ins){
+                        std::cout << pos + dist - 1 << " " << checkedPos + ins << "[" << pos << " " << ins << " " << len << " " << dist << "]" << std::endl;
+//                        ++flag;
+                    }
+                    if (cur - refer - 1 >= len) {
                         memcpy(cur, refer + 1, sizeof(short) * len);
                     } else {
                         for (int k = 0; k < len; k++) {
@@ -56,9 +61,10 @@ void scanThread(LockFreeQueue<Messenger> &checkMeta_, int count, std::vector<Mem
                     curState = cur[len - 1];
                 }
 //                std::cout << preState << " " << *(cur - 1) << std::endl;
-                checkMeta_.enqueue({pos, metaState, meta[j], text});
-                pos += len;
+//                checkMeta_.enqueue({pos, metaState, meta[j], text});
             }
+            checkMeta_.enqueue({pos, metaState, meta[j], text});
+            if(len > 0)pos += len;
         }
     }
     copyThreadEnd = true;
@@ -80,6 +86,10 @@ void checkThread(LockFreeQueue<Messenger> &checkMeta_, short *stateArray_, FSM* 
             short* refer = cur + dist - 1;
             unsigned char* token = messenger.text + pos + dist;
 
+            if(messenger.meta.len <= 0){
+                checkToken = true;
+            }
+
             if(checkToken){
                 wrong_cnt++;
                 unsigned int ins = messenger.meta.ins;
@@ -91,6 +101,11 @@ void checkThread(LockFreeQueue<Messenger> &checkMeta_, short *stateArray_, FSM* 
                     *cur = ScanByte(preState, *token_t, fsm_);
                 }
             }// 完整scan了token state，浪费
+
+            if(messenger.meta.len <= 0){
+                checkedPos += messenger.meta.ins;
+                continue;
+            }
 
             for (int i = 0; i < len; ++i, ++cur, ++refer, ++token) {
                 // 当前状态等于之前的状态，复制无误，跳过
@@ -115,6 +130,7 @@ void checkThread(LockFreeQueue<Messenger> &checkMeta_, short *stateArray_, FSM* 
                 checkToken = false;
                 skipped = false;
             }
+            checkedPos = messenger.pos + len;
         }
         else if(copyThreadEnd){
             break;

@@ -98,6 +98,7 @@ int main(int argc, char **argv) {
         copyThreadEnd = false;
         thread scanT(scanThread, std::ref(checkMeta), count, std::ref(contents), std::ref(metaInput), std::ref(metaSize), state, std::ref(stateArray), std::ref(fsm));
         thread checkT(checkThread, std::ref(checkMeta), std::ref(stateArray), std::ref(fsm));
+
         scanT.join();
         checkT.join();
     }
@@ -115,9 +116,11 @@ int main(int argc, char **argv) {
             unsigned int len = meta[j].len;
             // 打印token pointer状态
             for (int k = 0; k < ins + len; ++k, ++t, ++pos) {
-                std::cout << stateArray[pos + LEN_DICT] << " ";
-                if(k == ins - 1) cout << ". ";
                 if(t % 10 == 0) std::cout << std::endl;
+                if(k == 0 && ins == 0) cout << ".[" << ins << " " << len << " " << meta[j].dist << "] ";
+                cout << text[pos] << " ";
+                std::cout << stateArray[pos + LEN_DICT] << " ";
+                if(k == ins - 1) cout << ".[" << ins << " " << len << " " << meta[j].dist << "] ";
             }
             cout << "_" << j + 1 << "_ ";
         }

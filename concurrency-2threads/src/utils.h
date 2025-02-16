@@ -46,14 +46,10 @@ typedef struct _FSM {
 	bool* accept;
 }FSM;
 
-inline int ScanByte(short &state, unsigned char token, FSM* fsm) {
+inline int ScanByte(short &state, unsigned char token, const FSM* fsm) {
 	state = fsm->list[state * 256 + token];
-#ifdef ACTION
-	if (fsm->accept[state]) g_match++;
-	g_scan++;
-#endif
 	return state;
-};
+}
 
 void printPerformance(int rounds);
 int readFileName(char *path, std::vector<std::string> &name);

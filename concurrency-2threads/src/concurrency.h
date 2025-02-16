@@ -8,7 +8,6 @@
 #include <atomic>
 #include <mutex>
 
-extern bool scanThreadEnd;
 extern bool copyThreadEnd;
 
 typedef struct Messenger{
@@ -103,8 +102,8 @@ private:
 // 扫描线程，负责判断当前是token还是pointer，是token就直接计算状态，否则将meta送入copyThread()
 void scanThread(LockFreeQueue<Messenger> &checkMeta_, int count, std::vector<MemBuf> &contents_, std::vector<MemBuf> &metaInput_, int *metaSize_, short curState, short *stateArray_, FSM* fsm_);
 
-void copyThread(LockFreeQueue<Messenger> &copyMeta_, LockFreeQueue<Messenger> &checkMeta_, short *stateArray_, FSM* fsm_);
-
 void checkThread(LockFreeQueue<Messenger> &checkMeta_, short *stateArray_, FSM* fsm_);
+
+void Checked(unsigned long long curPos);
 
 #endif //CONCURRENCY_H

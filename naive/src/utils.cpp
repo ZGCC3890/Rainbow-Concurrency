@@ -1,6 +1,7 @@
 #include "utils.h"
 #include <sys/time.h>
 #include <dirent.h>
+#include <iostream>
 #define ACTION
 unsigned long g_spend = 0;
 unsigned long g_literals = 0;
@@ -17,11 +18,17 @@ void GetDictionaryState(short *stateDict, FSM *fsm)
 {
 	const unsigned char *symbol = kBrotliDictionaryData;
 	short state = 0;
+//    freopen("staticDic.txt", "w", stdout);
 	for (int i = 0; i < LEN_DICT; i++)
 	{
+//        cout << *symbol << " ";
 		state = fsm->list[state*256 + *symbol++];
+//        cout << state << " ";
 		*stateDict++ = state;
+//        if(i % 10 == 0) cout << endl;
 	}
+
+//    freopen("CON", "w", stdout);
 }
 
 void printPerformance(int rounds)
@@ -95,7 +102,29 @@ short SkipStaticPointer(int length, int dist, FSM* fsm, short state, short* stat
 //		printf("posi:%d, pos:%d, state:%d\n", position, pos, state);
 		if (state == *refer)
 		{
-			memcpy(cur, refer + 1, sizeof(short) * (length - pos));
+			if(position == 0)
+            {
+                for (int i = 0; i < length - pos; ++i) {
+                    cout << *(cur + i);
+                }
+                cout << endl;
+                for (int i = 0; i < length - pos; ++i) {
+                    cout << *(refer + 1 + i);
+                }
+                cout << endl;
+            }
+            memcpy(cur, refer + 1, sizeof(short) * (length - pos));
+            if(position == 0)
+            {
+                for (int i = 0; i < length - pos; ++i) {
+                    cout << *(cur + i);
+                }
+                cout << endl;
+                for (int i = 0; i < length - pos; ++i) {
+                    cout << *(refer + 1 + i);
+                }
+            }
+
 #ifdef ACTION
 			for (int i = 0; i < length - pos; i++) {
 				if (fsm->accept[cur[i]]) g_match++;
