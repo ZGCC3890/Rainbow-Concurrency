@@ -6,7 +6,9 @@
 #include <vector>
 #include <iostream>
 
-//#define ACTION
+#define ACTION
+
+unsigned long long checkedPos;
 
 void scanThread(LockFreeQueue<Messenger> &checkMeta_, int count, std::vector<MemBuf> &contents_, std::vector<MemBuf> &metaInput_, int *metaSize_, short curState, short *stateArray_, FSM* fsm_){
     for (int i = 0; i < count; i++) {
@@ -14,32 +16,34 @@ void scanThread(LockFreeQueue<Messenger> &checkMeta_, int count, std::vector<Mem
         MetaData *meta = (MetaData *) metaInput_[i].pBuff;
         int pos = 0;
         curState = 0;
-
         // 依次对一个metaData进行处理
         for (int j = 0; j < metaSize_[i]; j++) {
             unsigned int ins = meta[j].ins;
             unsigned int len = meta[j].len;
-
             // 处理token
             for (int k = 0; k < ins; k++) {
-                ScanByte(curState, text[pos], fsm_);
+                ScanByte(curState, *(text+pos), fsm_);
                 stateArray_[pos + LEN_DICT] = curState;
                 pos++;
 #ifdef ACTION
                 g_literals++;
-                if (fsm_->accept[curState]) g_match++;
 #endif
             }
             // 读pointer给copyThread
+            short metaState = 0;
             if (len > 0) {
-                checkMeta_.enqueue({pos, curState, meta[j], text});
+                 metaState = curState;
                 int dist = meta[j].dist;
                 if (dist < 0) {
 //                    curState = SkipDynamicPointer(text, len, dist, fsm_, curState, stateArray_, pos);
                     // 复制状态
                     short *cur = stateArray_ + LEN_DICT + pos;
                     short *refer = cur + dist - 1;
-                    if (cur - refer >= len) {
+                    while(pos + dist - 1 > checkedPos + ins){
+                        std::cout << pos + dist - 1 << " " << checkedPos + ins << "[" << pos << " " << ins << " " << len << " " << dist << "]" << std::endl;
+//                        ++flag;
+                    }
+                    if (cur - refer - 1 >= len) {
                         memcpy(cur, refer + 1, sizeof(short) * len);
                     } else {
                         for (int k = 0; k < len; k++) {
@@ -56,93 +60,81 @@ void scanThread(LockFreeQueue<Messenger> &checkMeta_, int count, std::vector<Mem
                     memcpy(cur, refer + 1, sizeof(short) * len);
                     curState = cur[len - 1];
                 }
-                pos += len;
+//                std::cout << preState << " " << *(cur - 1) << std::endl;
+//                checkMeta_.enqueue({pos, metaState, meta[j], text});
             }
+            checkMeta_.enqueue({pos, metaState, meta[j], text});
+            if(len > 0)pos += len;
         }
     }
     copyThreadEnd = true;
 }
 
-void copyThread(LockFreeQueue<Messenger> &copyMeta_, LockFreeQueue<Messenger> &checkMeta_, short *stateArray_, FSM* fsm_) {
-    Messenger messenger;
-    while (true) {
-        if(copyMeta_.dequeue(messenger)) {
-            int dist = messenger.meta.dist;
-            unsigned int len = messenger.meta.len;
-            int pos = messenger.pos;
-            if (dist < 0)
-            {
-//                messenger.curState = SkipDynamicPointer(messenger.text, len, dist, fsm_, messenger.curState, stateArray_, pos);
-                // 复制状态
-                short *cur = stateArray_ + LEN_DICT + pos;
-                short *refer = cur + dist - 1;
-                if (cur - refer >= len)
-                {
-                    memcpy(cur, refer + 1, sizeof(short) * len);
-                }
-                else
-                {
-                    for (int i = 0; i <= len; i++)
-                        *(cur+i) = *(refer+i);
-                    *cur = *refer;
-                }
-            }
-            else{
-//                messenger.curState = SkipStaticPointer(len, dist, fsm_, messenger.curState, stateArray_, pos);
-                short* refer = stateArray_ + dist - 1;
-                short* cur = stateArray_ + LEN_DICT + pos;
-                memcpy(cur, refer + 1, sizeof(short) * len);
-                for (int p = 0; p < len; p++, cur++)
-                {
-                    *cur = messenger.curState;
-                    messenger.curState = ScanByte(messenger.curState, kBrotliDictionaryData[dist++], fsm_);
-                }
-            }
-            checkMeta_.enqueue(messenger);
-        }
-        else if(scanThreadEnd){
-            copyThreadEnd = true;
-            break;
-        }
-    }
-}
-
-
 void checkThread(LockFreeQueue<Messenger> &checkMeta_, short *stateArray_, FSM* fsm_){
     Messenger messenger;
+    bool checkToken = false;
+    bool skipped = false;
     while(true){
         if(checkMeta_.dequeue(messenger)) {
+            pointer_count += messenger.meta.len;
+            // 从messenger取值
             int dist = messenger.meta.dist;
             unsigned int len = messenger.meta.len;
             int pos = messenger.pos;
+            short preState= messenger.preState;
             short* cur = stateArray_ + LEN_DICT + pos;
             short* refer = cur + dist - 1;
             unsigned char* token = messenger.text + pos + dist;
+
+            if(messenger.meta.len <= 0){
+                checkToken = true;
+            }
+
+            if(checkToken){
+                wrong_cnt++;
+                unsigned int ins = messenger.meta.ins;
+                unsigned char* token_t = messenger.text + pos - ins;
+                cur = stateArray_ + LEN_DICT + pos - ins;
+                // 将preState更新到token前一位状态重新计算token状态
+                preState = *(cur - 1);
+                for (int i = 0; i < ins; ++i, ++cur, ++token_t) {
+                    *cur = ScanByte(preState, *token_t, fsm_);
+                }
+            }// 完整scan了token state，浪费
+
+            if(messenger.meta.len <= 0){
+                checkedPos += messenger.meta.ins;
+                continue;
+            }
+
             for (int i = 0; i < len; ++i, ++cur, ++refer, ++token) {
                 // 当前状态等于之前的状态，复制无误，跳过
-                if(messenger.curState == *refer){
-#ifdef ACTION
-                    for (int j = 0; j < len - i; j++) {
-                        if (fsm_->accept[cur[j + i]]) g_match++;
-                    }
-#endif
+                if(preState == *refer){
+                    skipped = true;
                     break;
                 }
                 else{   // 否则说明需要重新计算状态
+                    ++wrong_pointer_count;
                     if(dist < 0){
-                        *cur = ScanByte(messenger.curState, *token, fsm_);
+                        *cur = ScanByte(preState, *token, fsm_);
                     }
                     else{
-                        *cur = ScanByte(messenger.curState, kBrotliDictionaryData[dist++], fsm_);
+                        *cur = ScanByte(preState, kBrotliDictionaryData[dist++], fsm_);
                     }
-#ifdef ACTION
-                    if (fsm_->accept[*cur]) g_match++;
-#endif
                 }
             }
+            if(!skipped){
+                // 如果未跳过，说明pointer状态全错，需要重新计算token state
+                checkToken = true;
+            }else{
+                checkToken = false;
+                skipped = false;
+            }
+            checkedPos = messenger.pos + len;
         }
         else if(copyThreadEnd){
             break;
         }
     }
 }
+//

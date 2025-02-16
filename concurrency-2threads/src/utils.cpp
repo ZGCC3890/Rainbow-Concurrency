@@ -3,6 +3,10 @@
 #include <dirent.h>
 #define ACTION
 
+unsigned long wrong_cnt = 0;
+unsigned long pointer_count = 0;
+unsigned long wrong_pointer_count = 0;
+
 unsigned long g_spend = 0;
 unsigned long g_literals = 0;
 unsigned long g_pointer_len = 0;
@@ -36,6 +40,7 @@ void printPerformance(int rounds)
 	printf("literals: %ld\n", g_literals/=rounds);
 	printf("pointer ratio: %.2f%%\n", 100 * (1.0 - (g_literals * 1.0 / total)));
     printf("average pointer length = %.2f, pointer_len = %ld, pointer_count = %ld\n", (g_pointer_len * 1.0) / g_pointer_count, g_pointer_len, g_pointer_count);
+    printf("wrong_cnt = %ld wrong_pointer_count = %ld pointer_count = %ld wrong ratio = %.4f%%", wrong_cnt, wrong_pointer_count, pointer_count, double(wrong_pointer_count * 1.0) / (pointer_count * 1.0) * 100);
 }
 
 int readFileName(char *path,vector<string> &name)

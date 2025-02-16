@@ -14,6 +14,10 @@
 #define LEN_DICT (122784+1)
 #define LEN_RINGBUF 32000000
 
+extern unsigned long wrong_cnt;
+extern unsigned long pointer_count;
+extern unsigned long wrong_pointer_count;
+
 extern unsigned long g_literals;
 extern unsigned long g_spend;
 extern unsigned long g_scan;
@@ -42,14 +46,10 @@ typedef struct _FSM {
 	bool* accept;
 }FSM;
 
-inline int ScanByte(short &state, unsigned char token, FSM* fsm) {
+inline int ScanByte(short &state, unsigned char token, const FSM* fsm) {
 	state = fsm->list[state * 256 + token];
-#ifdef ACTION
-	if (fsm->accept[state]) g_match++;
-	g_scan++;
-#endif
 	return state;
-};
+}
 
 void printPerformance(int rounds);
 int readFileName(char *path, std::vector<std::string> &name);

@@ -8,14 +8,13 @@
 #include <atomic>
 #include <mutex>
 
-extern bool scanThreadEnd;
 extern bool copyThreadEnd;
 
 typedef struct Messenger{
-    int pos;
-    short curState;
-    MetaData meta;
-    unsigned char* text;
+    int pos;                // 当前文件指针
+    short preState;         // *cur指针前一位的状态
+    MetaData meta;          // pointer对应metaData结构体
+    unsigned char* text;    // 当前文件指针
 }Messenger;
 
 // 参考linux内核中的kfifo算法，利用环形缓冲区实现单生产者单消费者无锁队列
@@ -103,8 +102,8 @@ private:
 // 扫描线程，负责判断当前是token还是pointer，是token就直接计算状态，否则将meta送入copyThread()
 void scanThread(LockFreeQueue<Messenger> &checkMeta_, int count, std::vector<MemBuf> &contents_, std::vector<MemBuf> &metaInput_, int *metaSize_, short curState, short *stateArray_, FSM* fsm_);
 
-void copyThread(LockFreeQueue<Messenger> &copyMeta_, LockFreeQueue<Messenger> &checkMeta_, short *stateArray_, FSM* fsm_);
-
 void checkThread(LockFreeQueue<Messenger> &checkMeta_, short *stateArray_, FSM* fsm_);
+
+void Checked(unsigned long long curPos);
 
 #endif //CONCURRENCY_H

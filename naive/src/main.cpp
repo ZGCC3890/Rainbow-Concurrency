@@ -82,6 +82,7 @@ int main(int argc, char **argv)
     }
 
     short *stateArray = new short[LEN_DICT + LEN_RINGBUF];
+    memset(stateArray, 0, LEN_DICT + LEN_RINGBUF);
     GetDictionaryState(stateArray, fsm);
 
     int count = contents.size();
@@ -144,13 +145,30 @@ int main(int argc, char **argv)
     }
 #ifdef ACTION
     std::freopen("output.txt", "w", stdout);
+    int t = 0;
+    // 遍历文件
     for (int i = 0; i < 1; ++i) {
-        for (int j = 0; j < contents[i].size; ++j) {
-            std::cout << stateArray[j + LEN_DICT] << " ";
+        unsigned char* text = contents[i].pBuff;
+        MetaData *meta = (MetaData *) metaInput[i].pBuff;
+        int pos = 0;
+        // 遍历metaData
+        for (int j = 0; j < metaSize[i]; ++j) {
+            unsigned int ins = meta[j].ins;
+            unsigned int len = meta[j].len;
+            // 打印token pointer状态
+            for (int k = 0; k < ins + len; ++k, ++t, ++pos) {
+                if(t % 10 == 0) std::cout << std::endl;
+                if(k == 0 && ins == 0) cout << ".[" << ins << " " << len << " " << meta[j].dist << "] ";
+                cout << text[pos] << " ";
+                std::cout << stateArray[pos + LEN_DICT] << " ";
+                if(k == ins - 1) cout << ".[" << ins << " " << len << " " << meta[j].dist << "] ";
+            }
+            cout << "_" << j + 1 << "_ ";
         }
     }
     std::freopen("CON", "w", stdout);
 #endif
+
     gettimeofday(&tv,NULL);
     long end = tv.tv_sec*1000 + tv.tv_usec/1000;
     g_spend = end - start;

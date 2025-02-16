@@ -74,4 +74,6 @@ void checkThread(LockFreeQueue<Messenger> &checkMeta_, short *stateArray_, FSM* 
 LockFreeQueue<Messenger> &checkMeta_ - 通信用无锁队列，copyThread存入 checkThread取出  
 short&#42; stateArray_ - 状态数组  
 FSM&#42; fsm_ - 状态转移表和结束状态表
+### ISSUE
+- scanThread 扫描token状态时会出现偶发错误，未定位原因
 ## <h2 id = "naive">naive</h2>
