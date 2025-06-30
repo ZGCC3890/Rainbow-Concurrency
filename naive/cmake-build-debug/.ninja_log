@@ -1,9 +1,18 @@
 # ninja log v5
 4	1219	7605325699348984	CMakeFiles/Rainbow-naive.dir/src/utils.cpp.obj	b82b3d817b2e6b55
-4	1375	7605321835423777	CMakeFiles/Rainbow-naive.dir/src/main.cpp.obj	58f34d1f6f42277b
-1219	1694	7605325703481738	Rainbow-naive.exe	5995f82b7032561c
-4	512	7585440567100862	CMakeFiles/Rainbow-naive.dir/src/dictionary.cpp.obj	8c4d95d05021caf3
-4	1182	7605533664008667	CMakeFiles/Rainbow-naive.dir/src/main.cpp.obj	58f34d1f6f42277b
-1182	1576	7605533667919682	Rainbow-naive.exe	5995f82b7032561c
 4	1203	7605534130680402	CMakeFiles/Rainbow-naive.dir/src/main.cpp.obj	58f34d1f6f42277b
 1204	1604	7605534134599015	Rainbow-naive.exe	5995f82b7032561c
+4	512	7585440567100862	CMakeFiles/Rainbow-naive.dir/src/dictionary.cpp.obj	8c4d95d05021caf3
+4	819	7642547884450387	CMakeFiles/Rainbow-naive.dir/src/main.cpp.obj	58f34d1f6f42277b
+820	963	7642547885856441	Rainbow-naive.exe	5995f82b7032561c
+4	841	7642548828029637	CMakeFiles/Rainbow-naive.dir/src/main.cpp.obj	58f34d1f6f42277b
+842	980	7642548829374539	Rainbow-naive.exe	5995f82b7032561c
+3	873	7642549050207470	CMakeFiles/Rainbow-naive.dir/src/main.cpp.obj	58f34d1f6f42277b
+874	1020	7642549051637601	Rainbow-naive.exe	5995f82b7032561c
+20	1026	7662464622623422	CMakeFiles/Rainbow-naive.dir/src/utils.cpp.obj	b82b3d817b2e6b55
+4	1092	7662464623258332	CMakeFiles/Rainbow-naive.dir/src/main.cpp.obj	58f34d1f6f42277b
+1092	1242	7662464624737924	Rainbow-naive.exe	5995f82b7032561c
+4	821	7662469265142987	CMakeFiles/Rainbow-naive.dir/src/utils.cpp.obj	b82b3d817b2e6b55
+821	964	7662469266529228	Rainbow-naive.exe	5995f82b7032561c
+4	1008	7662471884469261	CMakeFiles/Rainbow-naive.dir/src/main.cpp.obj	58f34d1f6f42277b
+1008	1156	7662471885886140	Rainbow-naive.exe	5995f82b7032561c
