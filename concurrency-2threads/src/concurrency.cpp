@@ -1,6 +1,8 @@
 //
 // Created by ZGCC on 25-1-15.
 //
+// 测试
+// test 
 #include "utils.h"
 #include "concurrency.h"
 #include <vector>
@@ -9,6 +11,7 @@
 #define ACTION
 
 unsigned long long checkedPos;
+unsigned long long flag = 0;
 
 void scanThread(LockFreeQueue<Messenger> &checkMeta_, int count, std::vector<MemBuf> &contents_, std::vector<MemBuf> &metaInput_, int *metaSize_, short curState, short *stateArray_, FSM* fsm_){
     for (int i = 0; i < count; i++) {
@@ -40,8 +43,8 @@ void scanThread(LockFreeQueue<Messenger> &checkMeta_, int count, std::vector<Mem
                     short *cur = stateArray_ + LEN_DICT + pos;
                     short *refer = cur + dist - 1;
                     while(pos + dist - 1 > checkedPos + ins){
-                        std::cout << pos + dist - 1 << " " << checkedPos + ins << "[" << pos << " " << ins << " " << len << " " << dist << "]" << std::endl;
-//                        ++flag;
+//                        std::cout << pos + dist - 1 << " " << checkedPos + ins << "[" << pos << " " << ins << " " << len << " " << dist << "]" << std::endl;
+                        ++flag;
                     }
                     if (cur - refer - 1 >= len) {
                         memcpy(cur, refer + 1, sizeof(short) * len);

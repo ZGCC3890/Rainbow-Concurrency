@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <sys/time.h>
 #include <iostream>
+#include <chrono>
 #define ACTION
 
 using namespace std;
@@ -94,6 +95,9 @@ int main(int argc, char **argv)
     struct timeval tv;
     gettimeofday(&tv,NULL);
     long start = tv.tv_sec*1000 + tv.tv_usec/1000;
+    chrono::duration<double, milli> elapsed{};
+    double cntTime = 0;
+    auto startT = chrono::high_resolution_clock::now();
     for(int r=0; r<rounds; r++)
     {
         for (int i = 0; i < count; i++)
@@ -143,6 +147,10 @@ int main(int argc, char **argv)
             }
         }
     }
+    auto endT = chrono::high_resolution_clock::now();
+    elapsed = endT - startT;
+    cntTime += elapsed.count();
+
 #ifdef ACTION
     std::freopen("output.txt", "w", stdout);
     int t = 0;
@@ -174,6 +182,7 @@ int main(int argc, char **argv)
     g_spend = end - start;
     printf("state = %d\n", state);
     printPerformance(rounds);
+    cout << "time: " <<cntTime << "ms";
 
     delete[] fsm->accept;
     delete[] fsm->list;

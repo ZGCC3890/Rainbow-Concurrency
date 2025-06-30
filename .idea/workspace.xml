@@ -11,7 +11,7 @@
   </component>
   <component name="CMakeRunConfigurationManager">
     <generated>
-      <config projectName="Rainbow-concurrency-2threads" targetName="Rainbow-concurrency-2threads" />
+      <config projectName="Rainbow-naive" targetName="Rainbow-naive" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -21,32 +21,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68beca76-34ee-40ac-a113-92d0802b6048" name="更改" comment="导入naive">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concurrency-2threads/cmake-build-debug/.cmake/api/v1/reply/index-2025-01-21T11-36-02-0869.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/concurrency-2threads/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/concurrency-2threads/cmake-build-debug/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concurrency-2threads/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/concurrency-2threads/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concurrency-2threads/cmake-build-debug/CMakeFiles/Rainbow-concurrency-2threads.dir/src/concurrency.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/concurrency-2threads/cmake-build-debug/CMakeFiles/Rainbow-concurrency-2threads.dir/src/concurrency.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concurrency-2threads/cmake-build-debug/CMakeFiles/Rainbow-concurrency-2threads.dir/src/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/concurrency-2threads/cmake-build-debug/CMakeFiles/Rainbow-concurrency-2threads.dir/src/main.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concurrency-2threads/cmake-build-debug/CMakeFiles/Rainbow-concurrency-2threads.dir/src/utils.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/concurrency-2threads/cmake-build-debug/CMakeFiles/Rainbow-concurrency-2threads.dir/src/utils.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concurrency-2threads/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/concurrency-2threads/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concurrency-2threads/cmake-build-debug/Rainbow-concurrency-2threads.exe" beforeDir="false" afterPath="$PROJECT_DIR$/concurrency-2threads/cmake-build-debug/Rainbow-concurrency-2threads.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/concurrency-2threads/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/concurrency-2threads/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/concurrency-2threads/cmake-build-debug/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/concurrency-2threads/cmake-build-debug/output.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/concurrency-2threads/src/concurrency.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/concurrency-2threads/src/concurrency.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concurrency-2threads/src/concurrency.h" beforeDir="false" afterPath="$PROJECT_DIR$/concurrency-2threads/src/concurrency.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concurrency-2threads/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/concurrency-2threads/src/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concurrency-2threads/src/utils.h" beforeDir="false" afterPath="$PROJECT_DIR$/concurrency-2threads/src/utils.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/.cmake/api/v1/reply/index-2025-01-21T11-35-46-0398.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/.cmake/api/v1/reply/index-2025-02-06T13-55-33-0233.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/naive/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/naive/cmake-build-debug/.ninja_log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/Rainbow-naive.dir/src/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/Rainbow-naive.dir/src/main.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/Rainbow-naive.dir/src/utils.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/Rainbow-naive.dir/src/utils.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/naive/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/Rainbow-naive.exe" beforeDir="false" afterPath="$PROJECT_DIR$/naive/cmake-build-debug/Rainbow-naive.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/naive/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/naive/cmake-build-debug/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/naive/cmake-build-debug/output.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/naive/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/naive/src/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/naive/src/utils.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/naive/src/utils.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,33 +100,28 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="CMake 应用程序.Rainbow-concurrency-2threads">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Rainbow-concurrency-2threads" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../../datasets/Brotli/Alexa/decompressed1/ ../../datasets/Brotli/Alexa/decoded1/ ../../tables/snort24.txt ../../tables/snort24-accept.txt 1 1" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Rainbow-concurrency-2threads" TARGET_NAME="Rainbow-concurrency-2threads" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Rainbow-concurrency-2threads" RUN_TARGET_NAME="Rainbow-concurrency-2threads">
+  <component name="RunManager" selected="CMake 应用程序.Rainbow-naive">
+    <configuration name="Rainbow-concurrency-2threads" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../../datasets/Brotli/Alexa/decompressed1/ ../../datasets/Brotli/Alexa/decoded1/ ../../tables/snort24.txt ../../tables/snort24-accept.txt 1 1" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Rainbow-naive" TARGET_NAME="Rainbow-concurrency-2threads" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Rainbow-naive" RUN_TARGET_NAME="Rainbow-concurrency-2threads">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Rainbow-concurrency-3threads" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../../datasets/Brotli/Alexa/decompressed/ ../../datasets/Brotli/Alexa/decoded/ ../../tables/snort24.txt ../../tables/snort24-accept.txt 1 1" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Rainbow-concurrency-2threads" TARGET_NAME="Rainbow-concurrency-3threads" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Rainbow-concurrency-2threads" RUN_TARGET_NAME="Rainbow-concurrency-3threads">
+    <configuration name="Rainbow-concurrency-3threads" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../../datasets/Brotli/Alexa/decompressed/ ../../datasets/Brotli/Alexa/decoded/ ../../tables/snort24.txt ../../tables/snort24-accept.txt 1 1" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Rainbow-naive" TARGET_NAME="Rainbow-concurrency-3threads" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Rainbow-naive" RUN_TARGET_NAME="Rainbow-concurrency-3threads">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Rainbow-naive-3threads" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../input ../pattern/pattern_rule.txt ../pattern/pattern_accept.txt" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Rainbow-concurrency-2threads" TARGET_NAME="Rainbow-naive-3threads" RUN_TARGET_PROJECT_NAME="Rainbow-concurrency-2threads" RUN_TARGET_NAME="Rainbow-naive-3threads">
+    <configuration name="Rainbow-naive-3threads" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../input ../pattern/pattern_rule.txt ../pattern/pattern_accept.txt" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Rainbow-naive" TARGET_NAME="Rainbow-naive-3threads" RUN_TARGET_PROJECT_NAME="Rainbow-naive" RUN_TARGET_NAME="Rainbow-naive-3threads">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Rainbow-naive" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../../datasets/Brotli/Alexa/decompressed1/ ../../datasets/Brotli/Alexa/decoded1/ ../../tables/snort24.txt ../../tables/snort24-accept.txt 1 1" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Rainbow-concurrency-2threads" TARGET_NAME="Rainbow-naive" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Rainbow-concurrency-2threads" RUN_TARGET_NAME="Rainbow-naive">
+    <configuration name="Rainbow-naive" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../../datasets/Brotli/Alexa/decompressed1/ ../../datasets/Brotli/Alexa/decoded1/ ../pattern/pattern_rule.txt ../pattern/pattern_accept.txt 1 1" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Rainbow-naive" TARGET_NAME="Rainbow-naive" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Rainbow-naive" RUN_TARGET_NAME="Rainbow-naive">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="naive-o" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../../datasets/Brotli/Alexa/decompressed1/ ../../tables/snort24.txt ../../tables/snort24-accept.txt" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Rainbow-concurrency-2threads" TARGET_NAME="naive" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Rainbow-concurrency-2threads" RUN_TARGET_NAME="naive">
+    <configuration name="naive-o" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../../datasets/Brotli/Alexa/decompressed1/ ../../tables/snort24.txt ../../tables/snort24-accept.txt" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Rainbow-naive" TARGET_NAME="naive" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Rainbow-naive" RUN_TARGET_NAME="naive">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -218,7 +202,33 @@
       <workItem from="1738826036956" duration="10000" />
       <workItem from="1738826511597" duration="12535000" />
       <workItem from="1738911630908" duration="1177000" />
-      <workItem from="1739698117710" duration="6824000" />
+      <workItem from="1739698117710" duration="9027000" />
+      <workItem from="1739796084326" duration="4000" />
+      <workItem from="1741862040106" duration="42000" />
+      <workItem from="1742551204188" duration="32000" />
+      <workItem from="1742551357547" duration="79000" />
+      <workItem from="1742551546537" duration="49000" />
+      <workItem from="1742551617319" duration="105000" />
+      <workItem from="1743057911295" duration="92000" />
+      <workItem from="1743058075902" duration="27000" />
+      <workItem from="1743058163743" duration="22000" />
+      <workItem from="1743059120288" duration="67000" />
+      <workItem from="1743059282103" duration="32000" />
+      <workItem from="1743059392645" duration="33000" />
+      <workItem from="1743059430160" duration="607000" />
+      <workItem from="1743060531930" duration="9000" />
+      <workItem from="1743061941806" duration="9000" />
+      <workItem from="1743064282271" duration="27000" />
+      <workItem from="1743064446984" duration="105000" />
+      <workItem from="1744462483802" duration="78000" />
+      <workItem from="1744462811428" duration="14000" />
+      <workItem from="1744534893016" duration="24000" />
+      <workItem from="1744543198226" duration="279000" />
+      <workItem from="1744543577813" duration="214000" />
+      <workItem from="1744543872190" duration="273000" />
+      <workItem from="1744544660511" duration="2000" />
+      <workItem from="1744790876155" duration="484000" />
+      <workItem from="1751267566714" duration="11000" />
     </task>
     <task id="LOCAL-00001" summary="导入naive">
       <option name="closed" value="true" />
